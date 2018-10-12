@@ -1,23 +1,37 @@
 " Settings
 set nohud
-set smoothscroll
-set nosmoothscroll
+set smoothscroll " use smooth scrolling
+set scrollduration = 250 " the duration of smooth scrolling
+" set nosmoothscroll
 set noautofocus " The opposite of autofocus; this setting stops
                 " sites from focusing on an input box when they load
-set numerichints
-set typelinkhints
-let searchlimit = 30
-let scrollstep = 50
-let barposition = "bottom"
+set numerichints " use numbers for link hints instead of a set of characters
+set typelinkhints " type text in the link to narrow down numeric hints (numerichints required)
+set showtabindices " Display the tab index in the tab’s title
 
-let locale = "uk" " Current choices are 'jp' and 'uk'. This allows cVim to use sites like google.co.uk
-                  " or google.co.jp to search rather than google.com. Support is currently limited.
-                  " Let me know if you need a different locale for one of the completion/search engines
+let searchlimit = 30 " the amount of results displayed in the command bar
+let scrollstep = 50 " the amount of pixels scrolled when using the scrollUp and scrollDown commands
+let barposition = "bottom" " position of the command bar
+
+
+" let locale = "uk" " Current choices are 'jp' and 'uk'. This allows cVim to use sites like google.co.uk
+                    " or google.co.jp to search rather than google.com. Support is currently limited.
+                    " Let me know if you need a different locale for one of the completion/search engines
+" set langmap = "$#"
 " let hintcharacters = "abc123"
 
-let searchengine fl = "http://finlex.laki/%s" " If you leave out the '%s' at the end of the URL,
-                                                                    " your query will be appended to the link.
-                                                                    " Otherwise, your query will replace the '%s'.
+" Search engines -- If you leave out the '%s' at the end of the URL, your
+" query will be appended to the link. Otherwise, your query will replace the
+" '%s' (these are for privoxy redirects).
+let searchengine fl = "http://finlex.laki/%s"
+let searchengine fh = "http://finlex.he/%s"
+let searchengine fo = "http://finlex.ok/%s"
+let searchengine el = "http://eurlex/%s"
+let searchengine ed = "http://edilex/%s"
+let searchengine helka = "http://helka/%s"
+
+""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""" Tähän asti tsekattu
 
 " This will do the same thing as above, except typing ':tabnew withbase' into to command bar
 " without any search parameters will open 'http://www.dogpile.com'
@@ -40,42 +54,53 @@ let blacklists = ["https://mail.google.com/*", "*://mail.google.com/*", "@https:
 
 let mapleader = ","
 
-" Mappings
-
+" ===========================================
+" MAPPINGS ==================================
+"
 map <Leader>r reloadTabUncached
 map <Leader>x :restore<Space>
+map w :open$<Space>
 
-" This remaps ++
-map L nextTab
-map H previousTab
-map g0 firstTab
-map g$ lastTab
+" Browsing
+map L goForward
+map H goBack
+
+" Moving (in a page)
 map J 7scrollDown
 map K 7scrollUp
+map <C-f> scrollPageDown
+map <C-b> scrollPageUp
 
+" Moving (tabs & windows)
+map <C-l> nextTab
+map <C-h> previousTab
+map <C-L> moveTabRight
+map <C-H> moveTabLeft
+map g0 firstTab
+map g# lastTab
+map <C-u> rootFrame
+map <M-h> previousTab
 " You can use <Space>, which is interpreted as a
 " literal " " character, to enter buffer completion mode
 map gb :buffer<Space>
 
-" This unmaps the default 'k' mapping
-"unmap k
+" Opening & closing
+map x closeTab
+map gxT closeTabLeft
+map gxt closeTabRight
+map gx0 closeTabsToLeft
+map gx# closeTabsToRight
 
-" This unmaps the default 'h', 'j', 'k', and 'l' mappings
-"unmap h j k l
+" Bookmarks
+map <M-b> createBookmark
+map <Leader>b createBookmark
 
-" This remaps the default 'f' mapping to the current 'F' mapping
-" map f F
-
-" Toggle the current HUD display value
-map <C-h> :set hud!<CR>
+" quit
+map ZZ quitChrome
 
 " Switch between alphabetical hint characters and numeric hints
 map <C-i> :set numerichints!<CR>
 
-map <C-u> rootFrame
-map <M-h> previousTab
-map <C-f> scrollPageDown
-map <C-b> scrollPageUp
 iunmap <C-y>
 imap <C-m> deleteWord
 
@@ -98,6 +123,7 @@ httpRequest({url: 'http://api.ipify.org/?format=json', json: true},
 }}
 " Displays your public IP address in the status bar
 map ci :call getIP<CR>
+map g\¤ :call getIP<CR>
 
 " Script hints
 echo(link) -> {{
@@ -105,7 +131,16 @@ echo(link) -> {{
 }}
 map <leader>f createScriptHint(echo)
 
-map <leader>s :source<CR>
+sourceLoadAlert() -> {{
+    alert("Config file loaded!");
+}}
+sourceLoad() -> {{
+    :source
+}}
+
+"map <leader>s :source<CR>
+map <leader>s :source
+
 let configpath = '/home/user/.cvimrc'
 set localconfig " Update settings via a local file (and the `:source` command) rather
                 " than the default options page in chrome
