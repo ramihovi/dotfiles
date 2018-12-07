@@ -92,7 +92,6 @@ map gx0 closeTabsToLeft
 map gx# closeTabsToRight
 
 " Bookmarks
-map <M-b> createBookmark
 map <Leader>b createBookmark
 
 " quit
