@@ -91,6 +91,10 @@ map gxt closeTabRight
 map gx0 closeTabsToLeft
 map gx# closeTabsToRight
 
+" Quickmark (mark)
+map m setMark
+map ' goToMark
+
 " Bookmarks
 map <M-b> createBookmark
 map <Leader>b createBookmark
