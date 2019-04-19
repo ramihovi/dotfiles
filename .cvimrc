@@ -2,7 +2,7 @@
 " https://gist.github.com/xkonni/77eba0cd6896ca9fa55e1355b0a42b02
 set nohud
 set smoothscroll
-set scrollduration = 250 " the duration of smooth scrolling
+"set scrollduration = 250 " the duration of smooth scrolling
 " set nosmoothscroll
 set noautofocus " The opposite of autofocus; this setting stops
                 " sites from focusing on an input box when they load;
@@ -104,9 +104,6 @@ map ZZ quitChrome
 " Switch between alphabetical hint characters and numeric hints
 map <C-i> :set numerichints!<CR>
 
-""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""" Tähän asti tsekattu
-
 iunmap <C-y>
 imap <C-m> deleteWord
 
@@ -148,7 +145,7 @@ sourceLoad() -> {{
 map <leader>s :source
 
 let configpath = '/home/user/.cvimrc'
-set localconfig " Update settings via a local file (and the `:source` command) rather
+"set localconfig " Update settings via a local file (and the `:source` command) rather
                 " than the default options page in chrome
 " As long as localconfig is set in the .cvimrc file. cVim will continue to read
 " settings from there
