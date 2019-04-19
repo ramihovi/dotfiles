@@ -1,4 +1,5 @@
 " Settings
+" https://gist.github.com/xkonni/77eba0cd6896ca9fa55e1355b0a42b02
 set nohud
 set smoothscroll
 set scrollduration = 250 " the duration of smooth scrolling
@@ -76,7 +77,7 @@ map <C-h> previousTab
 map <C-L> moveTabRight
 map <C-H> moveTabLeft
 map g0 firstTab
-map g# lastTab
+map g9 lastTab
 map <C-u> rootFrame
 map <M-h> previousTab
 " You can use <Space>, which is interpreted as a
@@ -127,8 +128,8 @@ httpRequest({url: 'http://api.ipify.org/?format=json', json: true},
             function(res) { Status.setMessage('IP: ' + res.ip); });
 }}
 " Displays your public IP address in the status bar
+" map ci :call getIP<CR>
 map ci :call getIP<CR>
-map g\¤ :call getIP<CR>
 
 " Script hints
 echo(link) -> {{
@@ -143,7 +144,7 @@ sourceLoad() -> {{
     :source
 }}
 
-"map <leader>s :source<CR>
+" map <leader>s :source<CR>
 map <leader>s :source
 
 let configpath = '/home/user/.cvimrc'
