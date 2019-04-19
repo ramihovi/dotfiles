@@ -89,7 +89,8 @@ map x closeTab
 map gxT closeTabLeft
 map gxt closeTabRight
 map gx0 closeTabsToLeft
-map gx# closeTabsToRight
+map gx9 closeTabsToRight
+map gxa closeTabsToRight;closeTabsToLeft
 
 " Quickmark (mark)
 map m setMark
