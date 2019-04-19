@@ -1,10 +1,11 @@
 " Settings
 set nohud
-set smoothscroll " use smooth scrolling
+set smoothscroll
 set scrollduration = 250 " the duration of smooth scrolling
 " set nosmoothscroll
 set noautofocus " The opposite of autofocus; this setting stops
-                " sites from focusing on an input box when they load
+                " sites from focusing on an input box when they load;
+                " use gi to focus
 set numerichints " use numbers for link hints instead of a set of characters
 set typelinkhints " type text in the link to narrow down numeric hints (numerichints required)
 set showtabindices " Display the tab index in the tab’s title
@@ -14,37 +15,35 @@ let scrollstep = 50 " the amount of pixels scrolled when using the scrollUp and 
 let barposition = "bottom" " position of the command bar
 
 
-" let locale = "uk" " Current choices are 'jp' and 'uk'. This allows cVim to use sites like google.co.uk
-                    " or google.co.jp to search rather than google.com. Support is currently limited.
-                    " Let me know if you need a different locale for one of the completion/search engines
+" let locale = "uk"
+"
 " set langmap = "$#"
 " let hintcharacters = "abc123"
 
 " Search engines -- If you leave out the '%s' at the end of the URL, your
 " query will be appended to the link. Otherwise, your query will replace the
-" '%s' (these are for privoxy redirects).
-let searchengine fl = "http://finlex.laki/%s"
-let searchengine fh = "http://finlex.he/%s"
-let searchengine fo = "http://finlex.ok/%s"
-let searchengine el = "http://eurlex/%s"
-let searchengine ed = "http://edilex/%s"
-let searchengine helka = "http://helka/%s"
+" '%s' (these searches are for privoxy redirects).
+let searchengine finlexlaki = ["http://finlex.fi/fi/laki/ajantasa/", "http://finlex.laki/%s"]
+let searchengine finlexhe = ["http://finlex.fi/fi/esitykset/he/", "http://finlex.he/%s"]
+let searchengine finlexok = ["http://finlex.fi/fi/oikeus/", "http://finlex.ok/%s"]
+let searchengine eurlex = ["https://eur-lex.europa.eu/homepage.html?locale=fi", "http://eurlex/%s"]
+let searchengine edilex = ["https://www-edilex-fi.libproxy.helsinki.fi/", "http://edilex/%s"]
+let searchengine helka = ["https://helka.finna.fi/", "http://helka/%s"]
 
-""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""" Tähän asti tsekattu
-
-" This will do the same thing as above, except typing ':tabnew withbase' into to command bar
-" without any search parameters will open 'http://www.dogpile.com'
-let searchengine withbase = ["http://www.dogpile.com", "http://www.dogpile.com/search/web?q=%s"]
-
-" alias ':g' to ':tabnew google'
-command g tabnew google
-
-let completionengines = ["google", "amazon", "imdb", "dogpile"]
 
 let searchalias g = "google" " Create a shortcut for search engines.
                              " For example, typing ':tabnew g example'
                              " would act the same way as ':tabnew google example'
+let searchalias fl = "finlexlaki"
+let searchalias fh = "finlexhe"
+let searchalias fo = "finlexok"
+let searchalias el = "eurlex"
+let searchalias ed = "edilex"
+
+" alias ':g' to ':tabnew google'
+command g tabnew google
+
+let completionengines = ["google", "amazon", "imdb"]
 
 " Open all of these in a tab with `gnb` or open one of these with <N>goa where <N>
 let qmark a = ["http://www.reddit.com", "http://www.google.com", "http://twitter.com"]
@@ -52,11 +51,11 @@ let qmark a = ["http://www.reddit.com", "http://www.google.com", "http://twitter
 let blacklists = ["https://mail.google.com/*", "*://mail.google.com/*", "@https://mail.google.com/mail/*"]
 " blacklists prefixed by '@' act as a whitelist
 
-let mapleader = ","
-
 " ===========================================
 " MAPPINGS ==================================
 "
+let mapleader = ","
+
 map <Leader>r reloadTabUncached
 map <Leader>x :restore<Space>
 map w :open$<Space>
@@ -103,6 +102,9 @@ map ZZ quitChrome
 
 " Switch between alphabetical hint characters and numeric hints
 map <C-i> :set numerichints!<CR>
+
+""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""" Tähän asti tsekattu
 
 iunmap <C-y>
 imap <C-m> deleteWord
