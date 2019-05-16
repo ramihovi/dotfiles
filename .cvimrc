@@ -24,7 +24,7 @@ let barposition = "bottom" " position of the command bar
 " Search engines -- If you leave out the '%s' at the end of the URL, your
 " query will be appended to the link. Otherwise, your query will replace the
 " '%s' (these searches are for privoxy redirects).
-let searchengine finlexlaki = ["http://finlex.fi/fi/laki/ajantasa/", "http://finlex.laki/%s"]
+let searchengine finlexlaki = ["https://www.finlex.fi/fi/laki/ajantasa/asiasanat/", "http://finlex.laki/%s"]
 let searchengine finlexhe = ["http://finlex.fi/fi/esitykset/he/", "http://finlex.he/%s"]
 let searchengine finlexok = ["http://finlex.fi/fi/oikeus/", "http://finlex.ok/%s"]
 let searchengine eurlex = ["https://eur-lex.europa.eu/homepage.html?locale=fi", "http://eurlex/%s"]
