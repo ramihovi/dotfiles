@@ -24,22 +24,25 @@ let barposition = "bottom" " position of the command bar
 " Search engines -- If you leave out the '%s' at the end of the URL, your
 " query will be appended to the link. Otherwise, your query will replace the
 " '%s' (these searches are for privoxy redirects).
-let searchengine finlexlaki = ["https://www.finlex.fi/fi/laki/ajantasa/asiasanat/", "http://finlex.laki/%s"]
-let searchengine finlexhe = ["http://finlex.fi/fi/esitykset/he/", "http://finlex.he/%s"]
-let searchengine finlexok = ["http://finlex.fi/fi/oikeus/", "http://finlex.ok/%s"]
-let searchengine eurlex = ["https://eur-lex.europa.eu/homepage.html?locale=fi", "http://eurlex/%s"]
-let searchengine edilex = ["https://www-edilex-fi.libproxy.helsinki.fi/", "http://edilex/%s"]
-let searchengine helka = ["https://helka.finna.fi/", "http://helka/%s"]
+let searchengine finlexlaki_fl = ["https://www.finlex.fi/fi/laki/ajantasa/asiasanat/", "http://finlex.laki/%s"]
+let searchengine finlexhe_fh = ["http://finlex.fi/fi/esitykset/he/", "http://finlex.he/%s"]
+let searchengine finlexok_fo = ["http://finlex.fi/fi/oikeus/", "http://finlex.ok/%s"]
+let searchengine eurlex_el = ["https://eur-lex.europa.eu/homepage.html?locale=fi", "http://eurlex/%s"]
+let searchengine edilex_ed = ["https://www-edilex-fi.libproxy.helsinki.fi/", "http://edilex/%s"]
+let searchengine helkabooks_hb = ["https://helka.finna.fi/", "http://helkab/%s"]
+let searchengine helkaarticles_ha = ["https://helka.finna.fi/Primo/Home", "http://helkaa/%s"]
 
 
 let searchalias g = "google" " Create a shortcut for search engines.
                              " For example, typing ':tabnew g example'
                              " would act the same way as ':tabnew google example'
-let searchalias fl = "finlexlaki"
-let searchalias fh = "finlexhe"
-let searchalias fo = "finlexok"
-let searchalias el = "eurlex"
-let searchalias ed = "edilex"
+let searchalias fl = "finlexlaki_fl"
+let searchalias fh = "finlexhe_fh"
+let searchalias fo = "finlexok_fo"
+let searchalias el = "eurlex_el"
+let searchalias ed = "edilex_ed"
+let searchalias hb = "helkabooks_hb"
+let searchalias ha = "helkaarticles_ha"
 
 " alias ':g' to ':tabnew google'
 command g tabnew google
