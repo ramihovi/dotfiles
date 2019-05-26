@@ -1,5 +1,9 @@
 " Settings
+"
+" https://raw.githubusercontent.com/ramihovi/dotfiles/master/.cvimrc
+" based on
 " https://gist.github.com/xkonni/77eba0cd6896ca9fa55e1355b0a42b02
+"
 set nohud
 set smoothscroll
 "set scrollduration = 250 " the duration of smooth scrolling
