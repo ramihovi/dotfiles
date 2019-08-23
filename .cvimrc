@@ -35,6 +35,7 @@ let searchengine eurlex_el = ["https://eur-lex.europa.eu/homepage.html?locale=fi
 let searchengine edilex_ed = ["https://www-edilex-fi.libproxy.helsinki.fi/", "http://edilex/%s"]
 let searchengine helkabooks_hb = ["https://helka.finna.fi/", "http://helkab/%s"]
 let searchengine helkaarticles_ha = ["https://helka.finna.fi/Primo/Home", "http://helkaa/%s"]
+let searchengine asiakastietobusiness_ab = ["https://www.asiakastieto.fi/yritykset/", "https://www.asiakastieto.fi/yritykset/haku?type=BUSINESS&q=%s"]
 
 
 let searchalias g = "google" " Create a shortcut for search engines.
@@ -47,6 +48,7 @@ let searchalias el = "eurlex_el"
 let searchalias ed = "edilex_ed"
 let searchalias hb = "helkabooks_hb"
 let searchalias ha = "helkaarticles_ha"
+let searchalias ab = "asiakastietobusiness_ab"
 
 " alias ':g' to ':tabnew google'
 command g tabnew google
