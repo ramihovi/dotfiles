@@ -37,6 +37,7 @@ let searchengine helkabooks_hb = ["https://helka.finna.fi/", "http://helkab/%s"]
 let searchengine helkaarticles_ha = ["https://helka.finna.fi/Primo/Home", "http://helkaa/%s"]
 let searchengine asiakastietobusiness_ab = ["https://www.asiakastieto.fi/yritykset/", "https://www.asiakastieto.fi/yritykset/haku?type=BUSINESS&q=%s"]
 let searchengine spotify_sp = ["https://open.spotify.com/search/", "https://open.spotify.com/search/%s"]
+let searchengine googlemaps_gm = ["https://map.google.com", "https://www.google.com/maps/search/%s"]
 
 
 let searchalias g = "google" " Create a shortcut for search engines.
@@ -51,6 +52,7 @@ let searchalias hb = "helkabooks_hb"
 let searchalias ha = "helkaarticles_ha"
 let searchalias ab = "asiakastietobusiness_ab"
 let searchalias sp = "spotify_sp"
+let searchalias gm = "googlemaps_gm"
 
 " alias ':g' to ':tabnew google'
 command g tabnew google
