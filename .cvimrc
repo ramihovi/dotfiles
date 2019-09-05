@@ -38,7 +38,7 @@ let searchengine helkaarticles_ha = ["https://helka.finna.fi/Primo/Home", "http:
 let searchengine asiakastietobusiness_ab = ["https://www.asiakastieto.fi/yritykset/", "https://www.asiakastieto.fi/yritykset/haku?type=BUSINESS&q=%s"]
 let searchengine spotify_sp = ["https://open.spotify.com/search/", "https://open.spotify.com/search/%s"]
 let searchengine googlemaps_gm = ["https://map.google.com", "https://www.google.com/maps/search/%s"]
-let searchengine googlemapsdir_gmr = ["https://www.google.fi/maps/dir/60°39'45.8\"N+25°33'38.9"E//", "https://www.google.fi/maps/dir/60°39'45.8\"N+25°33'38.9\"E/%s/"]
+let searchengine googlemapsdir_gmr = ["https://www.google.fi/maps/dir/60°39'45.8\"N+25°33'38.9\"E//", "https://www.google.fi/maps/dir/60°39'45.8\"N+25°33'38.9\"E/%s/"]
 
 
 
