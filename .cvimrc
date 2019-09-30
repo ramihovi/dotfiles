@@ -40,6 +40,7 @@ let searchengine spotify_sp = ["https://open.spotify.com/search/", "https://open
 let searchengine googlemaps_gm = ["https://map.google.com", "https://www.google.com/maps/search/%s"]
 let searchengine googlemapsdir_gmr = ["https://www.google.fi/maps/dir/60°39'45.8\"N+25°33'38.9\"E//", "https://www.google.fi/maps/dir/60°39'45.8\"N+25°33'38.9\"E/%s/"]
 let searchengine itlweather_ps = ["https://ilmatieteenlaitos.fi/saa/pukkila", "https://ilmatieteenlaitos.fi/saa/%s"]
+let searchengine netmot = ["https://mot.it.helsinki.fi/netmot.exe?motportal=80", "https://mot.it.helsinki.fi/netmot.exe?motportal=80&SearchWord=%s"]
 
 
 
